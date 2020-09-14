@@ -25,6 +25,7 @@ export interface AbstractChartConfig extends ChartConfig {
   stackedBar?: boolean;
   verticalLabelRotation?: number;
   formatXLabel?: (xLabel: string) => string;
+  barColor?: string;
 }
 export declare type AbstractChartState = {};
 declare class AbstractChart<
@@ -425,6 +426,7 @@ declare class AbstractChart<
       | "stackedBar"
       | "verticalLabelRotation"
       | "formatXLabel"
+      | "barColor"
       | "backgroundGradientFrom"
       | "backgroundGradientFromOpacity"
       | "backgroundGradientTo"

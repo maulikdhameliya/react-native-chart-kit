@@ -29,6 +29,7 @@ export interface AbstractChartConfig extends ChartConfig {
   stackedBar?: boolean;
   verticalLabelRotation?: number;
   formatXLabel?: (xLabel: string) => string;
+  barColor?: string;
 }
 
 export type AbstractChartState = {};

@@ -84,6 +84,7 @@ declare class StackedBarChart extends AbstractChart<
       | "stackedBar"
       | "verticalLabelRotation"
       | "formatXLabel"
+      | "barColor"
       | "backgroundGradientFrom"
       | "backgroundGradientFromOpacity"
       | "backgroundGradientTo"

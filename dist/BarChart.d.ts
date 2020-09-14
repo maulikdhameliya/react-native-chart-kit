@@ -41,7 +41,8 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
     height,
     paddingTop,
     paddingRight,
-    barRadius
+    barRadius,
+    barColor
   }: Pick<
     Pick<
       AbstractChartConfig,
@@ -66,6 +67,7 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
       | "stackedBar"
       | "verticalLabelRotation"
       | "formatXLabel"
+      | "barColor"
       | "backgroundGradientFrom"
       | "backgroundGradientFromOpacity"
       | "backgroundGradientTo"
@@ -88,7 +90,12 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
       | "scrollableInfoOffset"
       | "scrollableInfoSize"
     >,
-    "height" | "paddingRight" | "paddingTop" | "width" | "barRadius"
+    | "height"
+    | "paddingRight"
+    | "paddingTop"
+    | "width"
+    | "barColor"
+    | "barRadius"
   > & {
     data: number[];
   }) => JSX.Element[];
@@ -97,7 +104,8 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
     width,
     height,
     paddingTop,
-    paddingRight
+    paddingRight,
+    barColor
   }: Pick<
     Pick<
       AbstractChartConfig,
@@ -122,6 +130,7 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
       | "stackedBar"
       | "verticalLabelRotation"
       | "formatXLabel"
+      | "barColor"
       | "backgroundGradientFrom"
       | "backgroundGradientFromOpacity"
       | "backgroundGradientTo"
@@ -144,7 +153,7 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
       | "scrollableInfoOffset"
       | "scrollableInfoSize"
     >,
-    "height" | "paddingRight" | "paddingTop" | "width"
+    "height" | "paddingRight" | "paddingTop" | "width" | "barColor"
   > & {
     data: number[];
   }) => JSX.Element[];
@@ -178,6 +187,7 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
       | "stackedBar"
       | "verticalLabelRotation"
       | "formatXLabel"
+      | "barColor"
       | "backgroundGradientFrom"
       | "backgroundGradientFromOpacity"
       | "backgroundGradientTo"
