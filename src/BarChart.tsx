@@ -175,7 +175,8 @@ class BarChart extends AbstractChart<BarChartProps, BarChartState> {
       withInnerLines = true,
       showBarTops = true,
       showValuesOnTopOfBars = false,
-      segments = 4
+      segments = 4,
+      barColor = []
     } = this.props;
 
     const { borderRadius = 0, paddingTop = 16, paddingRight = 64 } = style;
@@ -251,7 +252,8 @@ class BarChart extends AbstractChart<BarChartProps, BarChartState> {
               ...config,
               data: data.datasets[0].data,
               paddingTop: paddingTop as number,
-              paddingRight: paddingRight as number
+              paddingRight: paddingRight as number,
+              barColor: barColor
             })}
           </G>
           <G>
@@ -269,7 +271,8 @@ class BarChart extends AbstractChart<BarChartProps, BarChartState> {
                 ...config,
                 data: data.datasets[0].data,
                 paddingTop: paddingTop as number,
-                paddingRight: paddingRight as number
+                paddingRight: paddingRight as number,
+                barColor: barColor
               })}
           </G>
         </Svg>
