@@ -52,16 +52,10 @@ class BarChart extends AbstractChart<BarChartProps, BarChartState> {
     height,
     paddingTop,
     paddingRight,
-    barRadius,
-    barColor
+    barRadius
   }: Pick<
     Omit<AbstractChartConfig, "data">,
-    | "width"
-    | "height"
-    | "paddingRight"
-    | "paddingTop"
-    | "barRadius"
-    | "barColor"
+    "width" | "height" | "paddingRight" | "paddingTop" | "barRadius"
   > & {
     data: number[];
   }) => {
@@ -85,7 +79,7 @@ class BarChart extends AbstractChart<BarChartProps, BarChartState> {
           rx={barRadius}
           width={barWidth}
           height={(Math.abs(barHeight) / 4) * 3}
-          fill={barColor[i] ? barColor[i] : "url(#fillShadowGradient)"}
+          fill={this.props.chartConfig.color(0.6, i)}
         />
       );
     });
@@ -96,11 +90,10 @@ class BarChart extends AbstractChart<BarChartProps, BarChartState> {
     width,
     height,
     paddingTop,
-    paddingRight,
-    barColor
+    paddingRight
   }: Pick<
     Omit<AbstractChartConfig, "data">,
-    "width" | "height" | "paddingRight" | "paddingTop" | "barColor"
+    "width" | "height" | "paddingRight" | "paddingTop"
   > & {
     data: number[];
   }) => {
@@ -120,7 +113,7 @@ class BarChart extends AbstractChart<BarChartProps, BarChartState> {
           y={((baseHeight - barHeight) / 4) * 3 + paddingTop}
           width={barWidth}
           height={2}
-          fill={barColor[i] ? barColor[i] : this.props.chartConfig.color(0.6)}
+          fill={this.props.chartConfig.color(0.6, i)}
         />
       );
     });
@@ -175,8 +168,7 @@ class BarChart extends AbstractChart<BarChartProps, BarChartState> {
       withInnerLines = true,
       showBarTops = true,
       showValuesOnTopOfBars = false,
-      segments = 4,
-      barColor = []
+      segments = 4
     } = this.props;
 
     const { borderRadius = 0, paddingTop = 16, paddingRight = 64 } = style;
@@ -252,8 +244,7 @@ class BarChart extends AbstractChart<BarChartProps, BarChartState> {
               ...config,
               data: data.datasets[0].data,
               paddingTop: paddingTop as number,
-              paddingRight: paddingRight as number,
-              barColor: barColor
+              paddingRight: paddingRight as number
             })}
           </G>
           <G>
@@ -271,8 +262,7 @@ class BarChart extends AbstractChart<BarChartProps, BarChartState> {
                 ...config,
                 data: data.datasets[0].data,
                 paddingTop: paddingTop as number,
-                paddingRight: paddingRight as number,
-                barColor: barColor
+                paddingRight: paddingRight as number
               })}
           </G>
         </Svg>
